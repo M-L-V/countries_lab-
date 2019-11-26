@@ -16,6 +16,16 @@
     </div>
 
 
+    <form v-on:submit.prevent="findCountry">
+      <h3> Filter by Name </h3>
+      <input type="text" v-model="filterSearch" />
+    </form>
+
+    <section>
+      <div class="country">
+        <h2 v-if="filterSearch"> {{ findCountry.name }} </h2>
+        <img id="flag" v-if="filterSearch" :src="findCountry.flag">
+    </section>
 
 
 
